@@ -30,7 +30,8 @@ if(NOT CEF_CMAKE_RESOURCES_OUTPUT_DIR)
     set(CEF_CMAKE_RESOURCES_OUTPUT_DIR ${CEF_CMAKE_OUTPUT_DIR})
 endif()
 
-if(CMAKE_SYSTEM_PROCESSOR MATCHES "^(arm64|aarch64)$")
+string(TOLOWER ${CMAKE_SYSTEM_PROCESSOR} processor_lower)
+if(processor_lower MATCHES "^(arm64|aarch64)$")
     set(cefArchitecture arm)
 endif()
 
